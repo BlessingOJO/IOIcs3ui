@@ -27,22 +27,22 @@ public class EP2a {
                 nAns += nNum;
             } else if (chVar.equals('a')) {
                 i = 0;     
-                checkVar(nVar, i, nAns, chOp);
+                nAns = operation(nVar, i, nAns, chOp);
             } else if (chVar.equals('b')) {
                 i = 1;
-                checkVar(nVar, i, nAns, chOp);
+                nAns = operation(nVar, i, nAns, chOp);
             } else if (chVar.equals('c')) {
                 i = 2;
-                checkVar(nVar, i, nAns, chOp);
-            }
+                nAns = operation(nVar, i, nAns, chOp);
+            }       
         }
         System.out.println("Answer: " + nAns);
     }
 
-    static void checkVar(int[] nVar, int i, int nAns, Character chOp) {
-        if (chOp.equals('+')) nAns += nVar[i];
-        else if (chOp.equals('-')) nAns -= nVar[i];
-        else if (chOp.equals('*')) nAns *= nVar[i];
-        else if (chOp.equals('/')) nAns /= nVar[i];
+    static int operation(int[] nVar, int i, int nAns, Character chOp) {
+        if (chOp.equals('+')) return nAns += nVar[i];
+        else if (chOp.equals('-')) return nAns -= nVar[i];
+        else if (chOp.equals('*')) return nAns *= nVar[i];
+        else return nAns /= nVar[i];
     }
 }
